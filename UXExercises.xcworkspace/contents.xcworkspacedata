@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:src/main/objc/ios/game/Game_iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/ios/master_detail/MasterDetail_iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/ios/page_based/PageBased_iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/ios/single_view/SingleView_iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/osx/Statusbar_OSX/Statusbar_OSX.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/osx/Storyboards_OSX/Storyboards_OSX.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/osx/StoryboardsAndXibs_OSX/StoryboardsAndXibs_OSX.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:src/main/objc/ios/tabbed_view/TabbedView_iOS.xcodeproj">
+   </FileRef>
+</Workspace>
