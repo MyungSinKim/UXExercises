@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:src/main/objc/ios/ratings/Ratings.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:src/main/objc/ios/game/Game_iOS.xcodeproj">
    </FileRef>
    <FileRef
@@ -14,13 +17,13 @@
       location = "group:src/main/objc/ios/single_view/SingleView_iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:src/main/objc/osx/Statusbar_OSX/Statusbar_OSX.xcodeproj">
+      location = "group:src/main/objc/osx/statusbar/Statusbar_OSX.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:src/main/objc/osx/Storyboards_OSX/Storyboards_OSX.xcodeproj">
+      location = "group:src/main/objc/osx/storyboards/Storyboards_OSX.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:src/main/objc/osx/StoryboardsAndXibs_OSX/StoryboardsAndXibs_OSX.xcodeproj">
+      location = "group:src/main/objc/osx/storyboards_xibs/StoryboardsAndXibs_OSX.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:src/main/objc/ios/tabbed_view/TabbedView_iOS.xcodeproj">
