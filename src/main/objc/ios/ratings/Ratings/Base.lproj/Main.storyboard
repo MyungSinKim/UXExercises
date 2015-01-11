@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1TK-8S-MwE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1TK-8S-MwE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="yUe-F6-Xg8">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="1TK-8S-MwE" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab.root" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1TK-8S-MwE" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6sQ-Ft-QIw">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -23,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="125" y="-1463"/>
         </scene>
-        <!--Players View Controller - Players-->
+        <!--Players-->
         <scene sceneID="6fJ-4y-6FH">
             <objects>
-                <tableViewController id="AiT-JF-GZT" customClass="PlayersViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tab.nav.players" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AiT-JF-GZT" customClass="PlayersViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="011-W6-pdo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,19 +42,16 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpH-XQ-djq">
                                             <rect key="frame" x="15" y="5" width="190" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4K-nD-FJz">
                                             <rect key="frame" x="15" y="25" width="210" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="102" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFi-YI-6UA">
                                             <rect key="frame" x="206" y="5" width="81" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -81,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1186" y="-1814"/>
         </scene>
-        <!--Player Details View Controller - Add Player-->
+        <!--Add Player-->
         <scene sceneID="N0g-cW-SJQ">
             <objects>
-                <tableViewController id="rji-Rp-BpG" customClass="PlayerDetailsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tab.nav.players.nav.add" title="Add Player" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rji-Rp-BpG" customClass="PlayerDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SZr-VA-H0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +99,6 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0A-t9-thF">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -168,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="2136" y="-1815"/>
         </scene>
-        <!--Game Picker View Controller - Choose Game-->
+        <!--Choose Game-->
         <scene sceneID="pUZ-bE-1Oh">
             <objects>
-                <tableViewController id="irC-fX-Zez" customClass="GamePickerViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tab.nav.players.nav.choose" title="Choose Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="irC-fX-Zez" customClass="GamePickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SAb-F8-9S4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="2579" y="-1815"/>
         </scene>
-        <!--View Controller - Gestures-->
+        <!--Gestures-->
         <scene sceneID="xyq-43-spf">
             <objects>
-                <viewController id="2fo-zv-auZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tab.gestures" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2fo-zv-auZ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EYn-gq-E7F"/>
                         <viewControllerLayoutGuide type="bottom" id="efm-Gr-vBv"/>
@@ -220,23 +217,22 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second tab" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0h-an-k9N">
                                 <rect key="frame" x="116" y="154" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Gestures" image="Gestures.png" id="sWb-To-KfY"/>
+                    <tabBarItem key="tabBarItem" title="Gestures" image="Gestures" id="sWb-To-KfY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBK-dB-rad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="659" y="-1137"/>
         </scene>
-        <!--View Controller-->
+        <!--Scratch-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Scratch" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Pj-eV-NkE"/>
                         <viewControllerLayoutGuide type="bottom" id="CZP-QI-eWS"/>
@@ -247,14 +243,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyR-fO-1qW">
                                 <rect key="frame" x="70" y="120" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yIC-ZM-9oJ">
                                 <rect key="frame" x="82" y="191" width="122" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -262,11 +256,9 @@
                             </segmentedControl>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-n1-Ssm">
                                 <rect key="frame" x="213" y="260" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCq-Oy-6wY">
                                 <rect key="frame" x="74" y="377" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -279,11 +271,11 @@
             </objects>
             <point key="canvasLocation" x="125" y="-724"/>
         </scene>
-        <!--Navigation Controller - Players-->
+        <!--Player Browser Navigation-->
         <scene sceneID="qB5-yP-G6F">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="klk-iG-xXQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Players" image="Players.png" id="U0c-XR-zn1"/>
+                <navigationController storyboardIdentifier="tab.nav.root" title="Player Browser Navigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="klk-iG-xXQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Players" image="Players" id="U0c-XR-zn1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E4H-yC-fWT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -298,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="660" y="-1814"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Selected Player Navigation-->
         <scene sceneID="YMy-qx-C6c">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Am2-sI-uZ0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="tab.nav.players.nav.root" title="Selected Player Navigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Am2-sI-uZ0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1LN-Ax-jqx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,8 +310,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Gestures.png" width="30" height="30"/>
-        <image name="Players.png" width="30" height="30"/>
+        <image name="Gestures" width="30" height="30"/>
+        <image name="Players" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

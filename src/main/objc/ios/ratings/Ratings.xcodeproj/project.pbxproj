@@ -80,7 +80,7 @@
 		9CEF053617DCFAC9000065F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CEF053817DCFAC9000065F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9CEF053917DCFAC9000065F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9CEF053B17DCFAC9000065F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9CEF053B17DCFAC9000065F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Ratings/Images.xcassets; sourceTree = "<group>"; };
 		9CEF054117DCFAC9000065F2 /* RatingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEF054217DCFAC9000065F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9CEF054A17DCFAC9000065F2 /* RatingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RatingsTests-Info.plist"; sourceTree = "<group>"; };
@@ -147,6 +147,8 @@
 			children = (
 				9CEF055817DD050E000065F2 /* Images */,
 				9CEF052917DCFAC9000065F2 /* Ratings */,
+				9CEF053B17DCFAC9000065F2 /* Images.xcassets */,
+				9CEF052A17DCFAC9000065F2 /* Supporting Files */,
 				9CEF054817DCFAC9000065F2 /* RatingsTests */,
 				9CEF052217DCFAC9000065F2 /* Frameworks */,
 				9CEF052117DCFAC9000065F2 /* Products */,
@@ -176,13 +178,11 @@
 		9CEF052917DCFAC9000065F2 /* Ratings */ = {
 			isa = PBXGroup;
 			children = (
+				9CEF053517DCFAC9000065F2 /* Main.storyboard */,
 				9CEF053217DCFAC9000065F2 /* AppDelegate.h */,
 				9CEF053317DCFAC9000065F2 /* AppDelegate.m */,
-				9CEF053517DCFAC9000065F2 /* Main.storyboard */,
 				9CEF053817DCFAC9000065F2 /* ViewController.h */,
 				9CEF053917DCFAC9000065F2 /* ViewController.m */,
-				9CEF053B17DCFAC9000065F2 /* Images.xcassets */,
-				9CEF052A17DCFAC9000065F2 /* Supporting Files */,
 				9CEF058C17DD0712000065F2 /* PlayersViewController.h */,
 				9CEF058D17DD0712000065F2 /* PlayersViewController.m */,
 				9CEF058F17DD07A0000065F2 /* Player.h */,
@@ -206,6 +206,7 @@
 				9CEF053117DCFAC9000065F2 /* Ratings-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = Ratings;
 			sourceTree = "<group>";
 		};
 		9CEF054817DCFAC9000065F2 /* RatingsTests */ = {
