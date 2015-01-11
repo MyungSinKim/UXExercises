@@ -1,6 +1,6 @@
 # UXExercises
 
-Series of exercies in iOS and OS X user experience programming
+Series of exercies in user experience programming
 
 ## Credits
 
