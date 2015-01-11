@@ -14,10 +14,10 @@
 
 @implementation PlayerDetailsViewController
 {
-    	NSString *game;
+    	NSString * game;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder * )aDecoder
 {
 	if ((self = [super initWithCoder:aDecoder]))
 	{
@@ -34,7 +34,7 @@
 
 - (IBAction)done:(id)sender
 {
-	Player *player = [[Player alloc] init];
+	Player * player = [[Player alloc] init];
 	player.name = self.nameTextField.text;
 	player.game = game;
 	player.rating = 1;
@@ -60,8 +60,8 @@
 #pragma mark - GamePickerViewControllerDelegate
 
 - (void)gamePickerViewController:
-(GamePickerViewController *)controller
-                   didSelectGame:(NSString *)theGame
+(GamePickerViewController * )controller
+                   didSelectGame:(NSString * )theGame
 {
 	game = theGame;
 	self.detailLabel.text = game;
@@ -74,8 +74,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView * )tableView
+didSelectRowAtIndexPath:(NSIndexPath * )indexPath
 {
 	if (indexPath.section == 0)
 		[self.nameTextField becomeFirstResponder];
@@ -86,11 +86,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	NSLog(@"dealloc PlayerDetailsViewController");
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue * )segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"PickGame"])
 	{
-		GamePickerViewController *gamePickerViewController =
+		GamePickerViewController * gamePickerViewController =
         segue.destinationViewController;
 		gamePickerViewController.delegate = self;
 		gamePickerViewController.game = game;

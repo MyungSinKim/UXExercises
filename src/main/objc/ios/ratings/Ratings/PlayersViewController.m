@@ -44,18 +44,18 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView * )tableView
 {
 	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
+- (NSInteger)tableView:(UITableView * )tableView
  numberOfRowsInSection:(NSInteger)section
 {
 	return [self.players count];
 }
 
-- (UIImage *)imageForRating:(int)rating
+- (UIImage * )imageForRating:(int)rating
 {
 	switch (rating)
 	{
@@ -68,11 +68,11 @@
 	return nil;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell * )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	PlayerCell *cell = (PlayerCell *)[tableView
+	PlayerCell * cell = (PlayerCell *)[tableView
                                       dequeueReusableCellWithIdentifier:@"PlayerCell"];
-	Player *player = [self.players objectAtIndex:indexPath.row];
+	Player * player = [self.players objectAtIndex:indexPath.row];
 	cell.nameLabel.text = player.name;
 	cell.gameLabel.text = player.game;
 	cell.ratingImageView.image = [self
@@ -80,7 +80,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView * )tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (editingStyle == UITableViewCellEditingStyleDelete)
 	{
@@ -90,18 +90,18 @@
 }
 
 
-/*
+/* 
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView * )tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+* /
 
-/*
+/* 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView * )tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
@@ -111,56 +111,56 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+* /
 
-/*
+/* 
 // Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)tableView:(UITableView * )tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
-*/
+* /
 
-/*
+/* 
 // Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView * )tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+* /
 
-/*
+/* 
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue * )segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 
- */
+ * /
 
 - (void)playerDetailsViewControllerDidCancel:
-(PlayerDetailsViewController *)controller
+(PlayerDetailsViewController * )controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)playerDetailsViewControllerDidSave:
-(PlayerDetailsViewController *)controller
+(PlayerDetailsViewController * )controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue * )segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"AddPlayer"])
 	{
-		UINavigationController *navigationController =
+		UINavigationController * navigationController =
         segue.destinationViewController;
 		PlayerDetailsViewController
-        *playerDetailsViewController =
+        * playerDetailsViewController =
         [[navigationController viewControllers]
          objectAtIndex:0];
 		playerDetailsViewController.delegate = self;
@@ -168,11 +168,11 @@
 }
 
 - (void)playerDetailsViewController:
-(PlayerDetailsViewController *)controller
-                       didAddPlayer:(Player *)player
+(PlayerDetailsViewController * )controller
+                       didAddPlayer:(Player * )player
 {
 	[self.players addObject:player];
-	NSIndexPath *indexPath =
+	NSIndexPath * indexPath =
     [NSIndexPath indexPathForRow:[self.players count] - 1
                        inSection:0];
 	[self.tableView insertRowsAtIndexPaths:

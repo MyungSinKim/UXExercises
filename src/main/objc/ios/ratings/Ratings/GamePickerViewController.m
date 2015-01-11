@@ -14,7 +14,7 @@
 
 @implementation GamePickerViewController
 {
-	NSArray *games;
+	NSArray * games;
 	NSUInteger selectedIndex;
 }
 
@@ -49,20 +49,20 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView * )tableView
 {
 	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
+- (NSInteger)tableView:(UITableView * )tableView
  numberOfRowsInSection:(NSInteger)section
 {
 	return [games count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell * )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView
+	UITableViewCell * cell = [tableView
                              dequeueReusableCellWithIdentifier:@"GameCell"];
 	cell.textLabel.text = [games objectAtIndex:indexPath.row];
 	if (indexPath.row == selectedIndex)
@@ -73,22 +73,22 @@
 	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView * )tableView
+didSelectRowAtIndexPath:(NSIndexPath * )indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (selectedIndex != NSNotFound)
 	{
-		UITableViewCell *cell = [tableView
+		UITableViewCell * cell = [tableView
                                  cellForRowAtIndexPath:[NSIndexPath
                                                         indexPathForRow:selectedIndex inSection:0]];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	selectedIndex = indexPath.row;
-	UITableViewCell *cell =
+	UITableViewCell * cell =
     [tableView cellForRowAtIndexPath:indexPath];
 	cell.accessoryType = UITableViewCellAccessoryCheckmark;
-	NSString *theGame = [games objectAtIndex:indexPath.row];
+	NSString * theGame = [games objectAtIndex:indexPath.row];
 	[self.delegate gamePickerViewController:self
                               didSelectGame:theGame];
 }
