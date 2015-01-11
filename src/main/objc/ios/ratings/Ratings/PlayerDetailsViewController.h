@@ -13,20 +13,20 @@
 @class PlayerDetailsViewController;
 
 @protocol PlayerDetailsViewControllerDelegate <NSObject>
-- (void)playerDetailsViewControllerDidCancel:
-(PlayerDetailsViewController * )controller;
-- (void)playerDetailsViewController:
-(PlayerDetailsViewController * )controller
-                       didAddPlayer:(Player * )player;
+- (void) playerDetailsViewControllerDidCancel:
+(PlayerDetailsViewController * ) controller;
+- (void) playerDetailsViewController:
+(PlayerDetailsViewController * ) controller
+                       didAddPlayer:(Player * ) player;
 @end
 
 @interface PlayerDetailsViewController : UITableViewController <GamePickerViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField * nameTextField;
-@property (weak, nonatomic) IBOutlet UILabel * detailLabel;
+@property (weak, nonatomic)  IBOutlet UITextField * nameTextField;
+@property (weak, nonatomic)  IBOutlet UILabel * detailLabel;
 
-@property (nonatomic, weak) id <PlayerDetailsViewControllerDelegate> delegate;
+@property (nonatomic, weak)  id <PlayerDetailsViewControllerDelegate> delegate;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)done:(id)sender;
+- (IBAction) cancel:(id)sender;
+- (IBAction) done:(id)sender;
 
 @end

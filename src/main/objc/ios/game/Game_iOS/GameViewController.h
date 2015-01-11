@@ -3,7 +3,7 @@
 //  Game_iOS
 //
 
-//  Copyright (c) 2015 Universal Secure Registry. All rights reserved.
+//  Copyright (c)  2015 Universal Secure Registry. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

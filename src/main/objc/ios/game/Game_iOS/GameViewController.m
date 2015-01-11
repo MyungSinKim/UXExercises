@@ -3,14 +3,14 @@
 //  Game_iOS
 //
 //  Created by Presley Cannady on 1/11/15.
-//  Copyright (c) 2015 Universal Secure Registry. All rights reserved.
+//  Copyright (c)  2015 Universal Secure Registry. All rights reserved.
 //
 
 #import "GameViewController.h"
 
 @implementation GameViewController
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
 
@@ -23,13 +23,13 @@
     [scene.rootNode addChildNode:cameraNode];
     
     // place the camera
-    cameraNode.position = SCNVector3Make(0, 0, 15);
+    cameraNode.position = SCNVector3Make(0, 0, 15) ;
     
     // create and add a light to the scene
     SCNNode * lightNode = [SCNNode node];
     lightNode.light = [SCNLight light];
     lightNode.light.type = SCNLightTypeOmni;
-    lightNode.position = SCNVector3Make(0, 10, 10);
+    lightNode.position = SCNVector3Make(0, 10, 10) ;
     [scene.rootNode addChildNode:lightNode];
     
     // create and add an ambient light to the scene
@@ -46,7 +46,7 @@
     [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
     
     // retrieve the SCNView
-    SCNView * scnView = (SCNView * )self.view;
+    SCNView * scnView = (SCNView * ) self.view;
     
     // set the scene to the view
     scnView.scene = scene;
@@ -61,24 +61,24 @@
     scnView.backgroundColor = [UIColor blackColor];
     
     // add a tap gesture recognizer
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:) ];
     NSMutableArray * gestureRecognizers = [NSMutableArray array];
     [gestureRecognizers addObject:tapGesture];
     [gestureRecognizers addObjectsFromArray:scnView.gestureRecognizers];
     scnView.gestureRecognizers = gestureRecognizers;
 }
 
-- (void) handleTap:(UIGestureRecognizer* )gestureRecognize
+- (void)  handleTap:(UIGestureRecognizer* ) gestureRecognize
 {
     // retrieve the SCNView
-    SCNView * scnView = (SCNView * )self.view;
+    SCNView * scnView = (SCNView * ) self.view;
     
     // check what nodes are tapped
     CGPoint p = [gestureRecognize locationInView:scnView];
     NSArray * hitResults = [scnView hitTest:p options:nil];
     
     // check that we clicked on at least one object
-    if([hitResults count] > 0){
+    if([hitResults count] > 0) {
         // retrieved the first clicked object
         SCNHitTestResult * result = [hitResults objectAtIndex:0];
         
@@ -105,25 +105,25 @@
     }
 }
 
-- (BOOL)shouldAutorotate
+- (BOOL) shouldAutorotate
 {
     return YES;
 }
 
-- (BOOL)prefersStatusBarHidden {
+- (BOOL) prefersStatusBarHidden {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (NSUInteger) supportedInterfaceOrientations
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)  {
         return UIInterfaceOrientationMaskAllButUpsideDown;
     } else {
         return UIInterfaceOrientationMaskAll;
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.

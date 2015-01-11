@@ -8,7 +8,7 @@
 
 #import "PlayerDetailsViewController.h"
 
-@interface PlayerDetailsViewController ()
+@interface PlayerDetailsViewController () 
 
 @end
 
@@ -17,22 +17,22 @@
     	NSString * game;
 }
 
-- (id)initWithCoder:(NSCoder * )aDecoder
+- (id) initWithCoder:(NSCoder * )aDecoder
 {
-	if ((self = [super initWithCoder:aDecoder]))
+	if ((self = [super initWithCoder:aDecoder]) )
 	{
-		NSLog(@"init PlayerDetailsViewController");
+		NSLog(@"init PlayerDetailsViewController") ;
 		game = @"Chess";
 	}
 	return self;
 }
 
-- (IBAction)cancel:(id)sender
+- (IBAction) cancel:(id)sender
 {
 	[self.delegate playerDetailsViewControllerDidCancel:self];
 }
 
-- (IBAction)done:(id)sender
+- (IBAction) done:(id)sender
 {
 	Player * player = [[Player alloc] init];
 	player.name = self.nameTextField.text;
@@ -42,16 +42,16 @@
                                   didAddPlayer:player];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id) initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)  {
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
 	[super viewDidLoad];
 	self.detailLabel.text = game;
@@ -59,36 +59,36 @@
 
 #pragma mark - GamePickerViewControllerDelegate
 
-- (void)gamePickerViewController:
-(GamePickerViewController * )controller
-                   didSelectGame:(NSString * )theGame
+- (void) gamePickerViewController:
+(GamePickerViewController * ) controller
+                   didSelectGame:(NSString * ) theGame
 {
 	game = theGame;
 	self.detailLabel.text = game;
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)tableView:(UITableView * )tableView
-didSelectRowAtIndexPath:(NSIndexPath * )indexPath
+- (void) tableView:(UITableView * )tableView
+didSelectRowAtIndexPath:(NSIndexPath * ) indexPath
 {
-	if (indexPath.section == 0)
+	if (indexPath.section == 0) 
 		[self.nameTextField becomeFirstResponder];
 }
 
-- (void)dealloc
+- (void) dealloc
 {
-	NSLog(@"dealloc PlayerDetailsViewController");
+	NSLog(@"dealloc PlayerDetailsViewController") ;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue * )segue sender:(id)sender
+- (void) prepareForSegue:(UIStoryboardSegue * )segue sender:(id) sender
 {
-	if ([segue.identifier isEqualToString:@"PickGame"])
+	if ([segue.identifier isEqualToString:@"PickGame"]) 
 	{
 		GamePickerViewController * gamePickerViewController =
         segue.destinationViewController;

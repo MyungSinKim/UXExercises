@@ -8,7 +8,7 @@
 
 #import "GamePickerViewController.h"
 
-@interface GamePickerViewController ()
+@interface GamePickerViewController () 
 
 @end
 
@@ -18,16 +18,16 @@
 	NSUInteger selectedIndex;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id) initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)  {
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
 	[super viewDidLoad];
 	games = [NSArray arrayWithObjects:
@@ -41,7 +41,7 @@
     selectedIndex = [games indexOfObject:self.game];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -49,23 +49,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView * )tableView
+- (NSInteger) numberOfSectionsInTableView:(UITableView * ) tableView
 {
 	return 1;
 }
 
-- (NSInteger)tableView:(UITableView * )tableView
- numberOfRowsInSection:(NSInteger)section
+- (NSInteger) tableView:(UITableView * )tableView
+ numberOfRowsInSection:(NSInteger) section
 {
 	return [games count];
 }
 
-- (UITableViewCell * )tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell * ) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell * cell = [tableView
                              dequeueReusableCellWithIdentifier:@"GameCell"];
 	cell.textLabel.text = [games objectAtIndex:indexPath.row];
-	if (indexPath.row == selectedIndex)
+	if (indexPath.row == selectedIndex) 
 		cell.accessoryType =
         UITableViewCellAccessoryCheckmark;
 	else
@@ -73,11 +73,11 @@
 	return cell;
 }
 
-- (void)tableView:(UITableView * )tableView
-didSelectRowAtIndexPath:(NSIndexPath * )indexPath
+- (void) tableView:(UITableView * )tableView
+didSelectRowAtIndexPath:(NSIndexPath * ) indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	if (selectedIndex != NSNotFound)
+	if (selectedIndex != NSNotFound) 
 	{
 		UITableViewCell * cell = [tableView
                                  cellForRowAtIndexPath:[NSIndexPath
