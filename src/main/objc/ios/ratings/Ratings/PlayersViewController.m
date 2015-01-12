@@ -59,19 +59,18 @@
 {
 	switch (rating) 
 	{
-		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
-		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
-		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
-		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
-		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
+		case 1: return [UIImage imageNamed:@"1StarSmall"];
+		case 2: return [UIImage imageNamed:@"2StarsSmall"];
+		case 3: return [UIImage imageNamed:@"3StarsSmall"];
+		case 4: return [UIImage imageNamed:@"4StarsSmall"];
+		case 5: return [UIImage imageNamed:@"5StarsSmall"];
 	}
 	return nil;
 }
 
 - (UITableViewCell * ) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	PlayerCell * cell = (PlayerCell *) [tableView
-                                      dequeueReusableCellWithIdentifier:@"PlayerCell"];
+	PlayerCell * cell = (PlayerCell *) [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
 	Player * player = [self.players objectAtIndex:indexPath.row];
 	cell.nameLabel.text = player.name;
 	cell.gameLabel.text = player.game;
@@ -90,14 +89,14 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL) tableView:(UITableView * )tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 /* 
 // Override to support editing the table view.
